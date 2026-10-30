@@ -11,6 +11,8 @@ Dibuat dengan HTML, CSS, dan JavaScript murni (tanpa framework dan tanpa build t
 ├── README.md
 └── assets/         # Gambar (buat folder ini sendiri)
     ├── foto-profil.jpg
+    ├── logo-piranti.png, logo-susiair.png        -> logo di Experience (opsional)
+    ├── logo-utb.png, logo-smk.png                -> logo di About / Education (opsional)
     ├── 01-layout-1.jpg ... -2 ... -3            -> Project 01 Production Layout
     ├── 04-equipment-1.jpg ... -2 ... -3         -> Project 02 Equipment
     ├── 05-warehouse-1.jpg ... -2 ... -3         -> Project 03 Warehouse & QCC
@@ -41,6 +43,10 @@ Website memakai routing hash ringan, sehingga tombol Back dan Forward browser be
 Teks project ada di `index.html`, pada `const P=[` di dalam tag `<script>`. Setiap project berisi `t` (judul), `cat`, `st` (status), `k` (`work`, `team`, atau `academic`), `d` (deskripsi di daftar), `img` (tiga path gambar), dan `s` (isi detail). Bagian pada `s` yang tidak ada, atau yang berisi teks "Belum ada data", tidak ditampilkan kepada pengunjung.
 
 Teks Overview, Experience, Skills, About, dan Contact ditulis langsung sebagai HTML di dalam tag `<main>`. Warna ada di `:root` pada bagian CSS (`--blue` #155687, `--navy`).
+
+## Logo
+
+Simpan logo sebagai `assets/logo-piranti`, `assets/logo-susiair`, `assets/logo-utb`, dan `assets/logo-smk` (PNG, JPG, JPEG, atau WEBP; sebaiknya latar transparan atau putih dan berbentuk persegi). Selama file belum ada, logo tidak ditampilkan. Gunakan logo dari sumber resmi, dan untuk logo perusahaan minta izin terlebih dahulu.
 
 ## Menambahkan Gambar
 
