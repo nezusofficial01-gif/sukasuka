@@ -21,11 +21,13 @@ h1,h2,h3{font-family:var(--hd);line-height:1.15;margin:0}a{color:var(--blue)}
 .sb :focus-visible{outline-color:#fff}
 .sbt{display:flex;align-items:center;gap:10px;padding:0 6px 20px}
 .logo{flex:none;width:38px;height:38px;border-radius:8px;background:var(--blue);color:#fff;font:700 15px var(--bd);display:flex;align-items:center;justify-content:center}
-.nm{flex:1;color:#fff;font:600 17px/1.15 var(--hd)}
+.nm{flex:1;color:#fff;font:700 19px/1.12 var(--hd)}
 .ib{background:none;border:1px solid rgba(255,255,255,.45);color:#fff;width:30px;height:30px;border-radius:6px;cursor:pointer;font:inherit}
-.sb nav{display:flex;flex-direction:column;gap:2px}
+.sb nav{display:flex;flex-direction:column;gap:2px;position:relative}
 .nv{display:flex;align-items:center;gap:12px;min-height:44px;padding:0 12px;border-radius:8px;color:#C9D6E0;font:500 15px var(--bd);text-decoration:none}
-.nv:hover{background:rgba(255,255,255,.08)}.nv[aria-current=page]{background:rgba(255,255,255,.16);color:#fff}.nv svg{flex:none}
+.nv{position:relative;z-index:1;transition:color .2s,transform .15s}.nv:hover{background:rgba(255,255,255,.08)}.nv[aria-current=page]{color:#fff}.nv:active{transform:scale(.97)}.nv[aria-current=page] svg{animation:pop .5s cubic-bezier(.3,1.6,.5,1)}.nv svg{flex:none}
+.ind{position:absolute;left:0;right:0;top:0;height:44px;border-radius:8px;background:rgba(255,255,255,.16);box-shadow:inset 3px 0 0 #fff;transition:transform .45s cubic-bezier(.22,.8,.2,1),height .3s;pointer-events:none}
+@keyframes pop{0%{transform:scale(.6)}100%{transform:none}}
 .cv{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;border-radius:8px;background:#fff;color:var(--navy);font:600 15px var(--bd);text-decoration:none}
 .sb.col{width:72px}.sb.col .lbl,.sb.col .nm{display:none}.sb.col .sbt{flex-direction:column}.sb.col .nv,.sb.col .cv{justify-content:center;padding:0}
 .mt,.bn{display:none}
@@ -46,7 +48,7 @@ h1{font-size:clamp(2rem,4vw,2.8rem);outline:0}.sub{color:var(--mute);max-width:6
 .pf img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .ph{display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;background:var(--tint);border:1px dashed #657482;color:var(--mute);font:400 .75rem var(--mono);width:100%;height:100%;word-break:break-all}
 .pf .ph{position:absolute;inset:0;border:0}
-.photo figcaption{margin-top:10px;font:500 .8rem var(--mono);color:var(--mute)}
+.photo figcaption{margin-top:14px;color:var(--ink)}.photo figcaption strong{display:block;font:700 1.7rem/1.1 var(--hd)}.photo figcaption span{display:block;margin-top:4px;font:700 1.05rem var(--bd);color:var(--blue)}
 .pj{display:grid;grid-template-columns:minmax(300px,38%) minmax(0,1fr);gap:28px;align-items:start}
 .list{position:sticky;top:24px}
 .fl{display:flex;flex-wrap:wrap;gap:4px;background:var(--tint);padding:4px;border-radius:12px;margin:16px 0}
@@ -69,7 +71,7 @@ h1{font-size:clamp(2rem,4vw,2.8rem);outline:0}.sub{color:var(--mute);max-width:6
 .imbox.zoom{cursor:zoom-in}.imbox.zoom:hover img{border-color:var(--blue)}.imbox:disabled{cursor:default}
 .pn{display:flex;justify-content:space-between;gap:10px;margin-top:26px;padding-top:16px;border-top:1px solid var(--line)}
 .job{display:grid;grid-template-columns:190px 1fr;gap:24px;padding:24px 0;border-top:1px solid var(--line)}
-.when{font:400 .85rem var(--mono);color:var(--mute)}.job h2{font-size:1.4rem}.co{font-weight:500;margin:2px 0 10px}
+.when{font:400 .85rem var(--mono);color:var(--mute)}.job h2{font-size:1.4rem}
 .sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
 .card{border:1px solid var(--line);border-radius:12px;padding:20px}.card h2{font-size:1.2rem;margin-bottom:10px}
 .card ul{list-style:none;margin:0;padding:0}.card li{display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px solid var(--line);font-size:.95rem}.card li:first-child{border:0}.card small{color:var(--mute)}
@@ -87,16 +89,37 @@ dialog::backdrop{background:rgba(15,46,74,.6)}
 .bar{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:var(--navy);color:#fff;font:400 .8rem var(--mono)}
 .bar button{background:none;border:1px solid #fff;color:#fff;padding:0 12px;min-height:36px;border-radius:6px;cursor:pointer;font:inherit}.lbb{display:flex;gap:6px}
 .lbf{margin:0;padding:14px;text-align:center}#lbi{max-width:100%;max-height:76vh;object-fit:contain}#lbt{font:400 .8rem var(--mono);color:var(--mute);margin-top:8px}
+
+.co{display:flex;align-items:center;gap:12px;font-weight:500;margin:2px 0 10px}
+.lgo{display:flex;flex:none;width:56px;height:56px;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:10px;background:#fff;padding:6px}
+.lgo:empty{display:none}.lgo img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+.sg{display:flex;align-items:center;gap:12px;font-size:1.25rem;margin:32px 0 14px}.sg::after{content:"";flex:1;height:1px;background:var(--line)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.tile{display:flex;gap:14px;align-items:flex-start;padding:18px;border:1px solid var(--line);border-radius:12px;background:#fff;transition:transform .25s,box-shadow .25s,border-color .25s}
+.tile:hover{transform:translateY(-3px);border-color:var(--blue);box-shadow:0 8px 22px rgba(21,86,135,.12)}
+.tile b{display:block;font:600 1.12rem var(--hd)}.tile p{margin:2px 0 0;font-size:.9rem;color:var(--mute);line-height:1.45}
+.tile .lg{width:44px;height:44px}.tile .lg svg{width:40px;height:40px}.tile .lg b.mono{width:40px;height:40px;font-size:.9rem;border-radius:8px}
+.lv{display:inline-block;margin-top:6px;background:var(--pale);color:var(--blue);font:500 .72rem var(--mono);padding:2px 9px;border-radius:999px}
+.comp{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+.ci{padding:14px 16px;border:1px solid var(--line);border-left:3px solid var(--blue);border-radius:8px}.ci b{font:600 1.02rem var(--hd)}.ci span{display:block;font-size:.85rem;color:var(--mute)}
+:is(.ov,.ab,.cg,.tiles,.comp)>*{animation:rise .55s cubic-bezier(.22,.8,.2,1) both}
+:is(.ov,.ab,.cg,.tiles,.comp)>:nth-child(2){animation-delay:.07s}:is(.ov,.ab,.cg,.tiles,.comp)>:nth-child(3){animation-delay:.14s}:is(.ov,.ab,.cg,.tiles,.comp)>:nth-child(n+4){animation-delay:.21s}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.sb,.bn{view-transition-name:nav}
+::view-transition-old(nav){display:none}::view-transition-new(nav){animation:none;mix-blend-mode:normal}
+::view-transition-old(root){animation:none}
+::view-transition-new(root){animation:vtr .7s cubic-bezier(.22,.8,.2,1) both}
+@keyframes vtr{from{clip-path:circle(0 at var(--cx,50%) var(--cy,50%))}to{clip-path:circle(150vmax at var(--cx,50%) var(--cy,50%))}}
 @media(max-width:1100px){.sb{width:72px}.sb .lbl,.sb .nm,.sb .ib{display:none}.sbt{justify-content:center;padding-bottom:16px}.nv,.cv{justify-content:center;padding:0}.main{padding:28px}
 .pj{grid-template-columns:1fr}.list{position:static}.pj.has-sel .list{display:none}.pj:not(.has-sel) .det{display:none}.back{display:inline-flex}.ov{grid-template-columns:1fr;min-height:0;gap:28px}.photo{justify-self:start;max-width:320px}}
 @media(max-width:820px){.app{display:block}.sb{display:none}
-.mt{display:flex;position:sticky;top:0;z-index:10;justify-content:space-between;align-items:center;min-height:52px;padding:0 16px;background:var(--navy);color:#fff;font:600 17px var(--hd)}
+.mt{display:flex;position:sticky;top:0;z-index:10;justify-content:space-between;align-items:center;min-height:52px;padding:0 16px;background:var(--navy);color:#fff;font:700 18px var(--hd)}
 .mt a{color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:6px;padding:0 12px;min-height:36px;display:inline-flex;align-items:center;font:500 14px var(--bd);text-decoration:none}
 .bn{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:10;background:#fff;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0)}
 .bn a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:56px;font:500 .68rem var(--bd);color:var(--mute);text-decoration:none}.bn a[aria-current=page]{color:var(--blue)}
 .main{padding:20px 16px 92px}.job,.ab{grid-template-columns:1fr;gap:8px}.det{padding:18px}.det h2{font-size:1.6rem}
 .gal{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:84%;overflow-x:auto;scroll-snap-type:x mandatory}.gal>*{scroll-snap-align:start}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}}
 </style>
 </head>
 <body>
@@ -116,14 +139,14 @@ dialog::backdrop{background:rgba(15,46,74,.6)}
 <p class="lead">Mahasiswa Industrial Engineering dengan pengalaman langsung di production layout, perancangan equipment, dan workplace improvement. Saya membangun pendekatan yang sistematis terhadap proses manufaktur dan efisiensi operasional.</p>
 <div class="btns"><a class="btn pri" href="#/projects">Explore Projects</a><a class="btn" href="https://drive.google.com/file/d/1cTh8JJxkhX1ZnzGVYJFbxWuGiHbiVlfd/view?usp=drive_link" target="_blank" rel="noopener">View CV</a></div>
 <ul class="chips"><li>Production Layout</li><li>Facility Planning</li><li>Equipment &amp; Workplace Design</li><li>Continuous Improvement</li></ul></div>
-<figure class="photo"><div class="pf"><div class="ph">PLACEHOLDER<br>assets/foto-profil.jpg</div></div><figcaption>Nabil Alfahmi Labib · Mechanical &amp; Layout Drafter</figcaption></figure></div></section>
+<figure class="photo"><div class="pf"><div class="ph">PLACEHOLDER<br>assets/foto-profil.jpg</div></div><figcaption><strong>Nabil Alfahmi Labib</strong><span>Mechanical &amp; Layout Drafter</span></figcaption></figure></div></section>
 
 <section class="view" id="v-projects" hidden><div class="pj" id="pj">
 <div class="list"><h1 tabindex="-1">Projects</h1><p class="sub" style="margin-bottom:0">Pilih project untuk melihat detailnya.</p><div class="fl" id="fl" role="group" aria-label="Filter proyek"></div><div class="pls" id="pl"></div></div>
 <article class="det" id="det" aria-label="Detail project"></article></div></section>
 
 <section class="view" id="v-experience" hidden><h1 tabindex="-1">Experience</h1><p class="sub">Tanggung jawab dan kontribusi, bukan klaim hasil terukur.</p>
-<div class="job"><div class="when">Juni 2024 – sekarang</div><div><h2>Mechanical &amp; Layout Drafter</h2><div class="co">PT PIRANTI TEKNIK INDONESIA (PLAN 3 BANSHU ELECTRIC INDONESIA)</div>
+<div class="job"><div class="when">Juni 2024 – sekarang</div><div><h2>Mechanical &amp; Layout Drafter</h2><div class="co"><span class="lgo" data-l="assets/logo-piranti.png" data-a="Logo PT Piranti Teknik Indonesia"></span><span>PT PIRANTI TEKNIK INDONESIA (PLAN 3 BANSHU ELECTRIC INDONESIA)</span></div>
 <ul><li>Menyusun production area layout berdasarkan kebutuhan manufaktur, posisi equipment, alur kerja, dan pemanfaatan ruang.</li>
 <li>Mendukung proyek relayout fasilitas, termasuk penambahan bangunan dan perluasan fasilitas produksi.</li>
 <li>Merancang equipment dan fasilitas kerja seperti worktable, jig, cabinet, dan peralatan pendukung.</li>
@@ -132,14 +155,30 @@ dialog::backdrop{background:rgba(15,46,74,.6)}
 <li>Menyesuaikan layout mengikuti perubahan proses produksi dan kebutuhan operasional.</li>
 <li>Berkontribusi pada aktivitas Continuous Improvement terkait space utilization, efisiensi workflow, dan workplace organization.</li>
 <li>Mendukung penerapan prinsip dasar Lean Manufacturing dalam optimasi proses dan fasilitas.</li></ul></div></div>
-<div class="job"><div class="when">Okt 2022 – Feb 2023</div><div><h2>Data Entry Intern (PKL)</h2><div class="co">SUSI AIR, Data Center</div>
+<div class="job"><div class="when">Okt 2022 – Feb 2023</div><div><h2>Data Entry Intern (PKL)</h2><div class="co"><span class="lgo" data-l="assets/logo-susiair.png" data-a="Logo Susi Air"></span><span>SUSI AIR, Data Center</span></div>
 <ul><li>Menginput dan memelihara data operasional pada sistem digital.</li><li>Menjaga akurasi dan keteraturan data.</li><li>Membantu operasional Data Center melalui kegiatan administrasi dan pengelolaan data.</li></ul></div></div></section>
 
-<section class="view" id="v-skills" hidden><h1 tabindex="-1">Skills</h1><p class="sub">Dikelompokkan berdasarkan pengalaman nyata, tanpa persentase kemahiran.</p>
-<div class="sk">
-<div class="card"><h2>Engineering Design</h2><ul><li><i class="lg" data-i="sketchup"></i>SketchUp</li><li><i class="lg" data-i="zw3d"></i>ZW3D</li><li><i class="lg" data-i="autocad"></i><span>AutoCAD <small>Basic–Intermediate</small></span></li></ul></div>
-<div class="card"><h2>Manufacturing &amp; IE</h2><ul><li>Production Layout Design</li><li>Facility Planning</li><li>Workflow Analysis</li><li>Space Utilization</li><li>Equipment &amp; Workplace Design</li><li>Continuous Improvement Support</li><li>Foundational Lean Manufacturing</li><li>Basic Ergonomic Considerations</li></ul></div>
-<div class="card"><h2>Data &amp; Productivity</h2><ul><li><i class="lg" data-i="microsoftoffice"></i>Microsoft Office</li><li><i class="lg" data-i="googlesheets"></i>Google Sheets</li><li><i class="lg" data-i="chart"></i><span>Looker Studio <small>Basic, pengalaman proyek akademik</small></span></li></ul></div></div></section>
+<section class="view" id="v-skills" hidden><h1 tabindex="-1">Skills</h1><p class="sub">Dikelompokkan berdasarkan pengalaman nyata. Tanpa persentase; level hanya dicantumkan bila penggunaannya memang terbatas.</p>
+<h2 class="sg">Engineering Design</h2>
+<div class="tiles">
+<div class="tile"><i class="lg" data-i="sketchup"></i><div><b>SketchUp</b><p>Model 3D untuk visualisasi layout dan perencanaan teknis.</p></div></div>
+<div class="tile"><i class="lg" data-i="zw3d"></i><div><b>ZW3D</b><p>Technical drawing untuk fabrikasi dan implementasi equipment.</p></div></div>
+<div class="tile"><i class="lg" data-i="autocad"></i><div><b>AutoCAD</b><span class="lv">Basic–Intermediate</span></div></div></div>
+<h2 class="sg">Manufacturing &amp; Industrial Engineering</h2>
+<div class="comp">
+<div class="ci"><b>Production Layout Design</b><span>Terlihat di <a href="#/projects/layout">Project 01</a></span></div>
+<div class="ci"><b>Facility Planning</b><span>Terlihat di <a href="#/projects/layout">Project 01</a></span></div>
+<div class="ci"><b>Space Utilization</b><span>Terlihat di <a href="#/projects/layout">Project 01</a></span></div>
+<div class="ci"><b>Equipment &amp; Workplace Design</b><span>Terlihat di <a href="#/projects/equipment">Project 02</a></span></div>
+<div class="ci"><b>Basic Ergonomic Considerations</b><span>Terlihat di <a href="#/projects/equipment">Project 02</a></span></div>
+<div class="ci"><b>Continuous Improvement Support</b><span>Terlihat di <a href="#/projects/warehouse">Project 03</a></span></div>
+<div class="ci"><b>Foundational Lean Manufacturing</b><span>Terlihat di <a href="#/projects/warehouse">Project 03</a>, <a href="#/projects/vsm">Project 04</a></span></div>
+<div class="ci"><b>Workflow Analysis</b><span>Terlihat di <a href="#/projects/vsm">Project 04</a></span></div></div>
+<h2 class="sg">Data &amp; Productivity</h2>
+<div class="tiles">
+<div class="tile"><i class="lg" data-i="microsoftoffice"></i><div><b>Microsoft Office</b></div></div>
+<div class="tile"><i class="lg" data-i="googlesheets"></i><div><b>Google Sheets</b><p>Input dan penataan data pada <a href="#/projects/dashboard">Project 05</a>.</p></div></div>
+<div class="tile"><i class="lg" data-i="chart"></i><div><b>Looker Studio</b><p>Visualisasi dashboard pada proyek akademik (<a href="#/projects/dashboard">Project 05</a>).</p><span class="lv">Basic</span></div></div></div></section>
 
 <section class="view" id="v-about" hidden><h1 tabindex="-1">About</h1><p class="sub">Praktisi yang berkembang di antara engineering design, operasi manufaktur, dan Industrial Engineering.</p>
 <div class="ab"><div>
@@ -148,8 +187,8 @@ dialog::backdrop{background:rgba(15,46,74,.6)}
 <div><p>Di sisi akademik, saya mempelajari Industrial Engineering dengan konsentrasi Manufacturing. Pengalaman di layout dan equipment membuat saya tertarik pada Workflow Analysis, Lean Manufacturing, dan Continuous Improvement, dan minat itu mulai saya praktikkan lewat proyek tim seperti Value Stream Mapping dan QCC.</p>
 <p class="note">Saya masih berkembang. Portfolio ini memisahkan dengan jelas pekerjaan di tempat kerja, proyek tim, proyek akademik, dan solusi yang masih berupa rancangan.</p></div></div>
 <div class="ed"><h2>Education</h2>
-<div class="job" style="padding:14px 0"><div class="when">2024 – sekarang</div><div><b>S1 Industrial Engineering</b><br>Universitas Teknologi Bandung, konsentrasi Manufacturing</div></div>
-<div class="job" style="padding:14px 0"><div class="when">Lulus 2024</div><div><b>SMK Negeri 1 Cijulang</b><br>Office Management Automation</div></div></div></section>
+<div class="job" style="padding:14px 0"><div class="when">2024 – sekarang</div><div class="co" style="margin:0"><span class="lgo" data-l="assets/logo-utb.png" data-a="Logo Universitas Teknologi Bandung"></span><div><b>S1 Industrial Engineering</b><br>Universitas Teknologi Bandung, konsentrasi Manufacturing</div></div></div>
+<div class="job" style="padding:14px 0"><div class="when">Lulus 2024</div><div class="co" style="margin:0"><span class="lgo" data-l="assets/logo-smk.png" data-a="Logo SMK Negeri 1 Cijulang"></span><div><b>SMK Negeri 1 Cijulang</b><br>Office Management Automation</div></div></div></div></section>
 
 <section class="view" id="v-contact" hidden><h1 tabindex="-1">Contact</h1><p class="sub">Terbuka untuk diskusi dan peluang di bidang manufacturing, Industrial Engineering, dan Continuous Improvement.</p>
 <div class="cg">
@@ -227,11 +266,12 @@ $$("[data-i]").forEach(e=>e.innerHTML=ico(e.dataset.i));
 function tryImg(path,alt,fail){const b=path.replace(/\.\w+$/,""),x=["jpg","png","jpeg","webp"];let k=0;const im=new Image();im.alt=alt;
 im.onload=()=>{const q=im.parentNode;if(q&&q.classList&&q.classList.contains("imbox")){q.disabled=false;q.classList.add("zoom");q.setAttribute("aria-label","Perbesar: "+alt)}};
 im.onerror=()=>{k++;k<x.length?im.src=b+"."+x[k]:im.replaceWith(fail())};im.src=b+"."+x[0];return im}
+$$(".lgo").forEach(e=>e.append(tryImg(e.dataset.l,e.dataset.a,()=>document.createComment(""))));
 $(".pf").append(tryImg("assets/foto-profil.jpg","Foto Nabil Alfahmi Labib",()=>document.createComment("")));
 /* Navigasi */
 const si=p=>`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">${p}</svg>`;
 const N=[["overview","Overview",'<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>'],["projects","Projects",'<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/>'],["experience","Experience",'<rect x="3" y="7" width="18" height="13" rx="1"/><path d="M9 7V4h6v3"/>'],["skills","Skills",'<path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/>'],["about","About",'<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/>'],["contact","Contact",'<rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 6l9 7 9-7"/>']];
-$("#nav").innerHTML=N.map(([k,l,p])=>`<a class="nv" href="#/${k}" data-v="${k}">${si(p)}<span class="lbl">${l}</span></a>`).join("");
+$("#nav").innerHTML='<span class="ind" aria-hidden="true"></span>'+N.map(([k,l,p])=>`<a class="nv" href="#/${k}" data-v="${k}">${si(p)}<span class="lbl">${l}</span></a>`).join("");
 $("#bn").innerHTML=N.map(([k,l,p])=>`<a href="#/${k}" data-v="${k}">${si(p)}<span>${l}</span></a>`).join("");
 $("#tg").onclick=()=>{const c=$("#sb").classList.toggle("col");$("#tg").setAttribute("aria-expanded",String(!c));$("#tg").setAttribute("aria-label",c?"Perluas sidebar":"Ciutkan sidebar");$("#tg").innerHTML=c?"&rsaquo;":"&lsaquo;"};
 /* Projects */
@@ -267,6 +307,7 @@ function detail(p,arr){
 $("#fl").onclick=e=>{const b=e.target.closest("button");if(!b)return;F=b.dataset.f;
  if(sel&&!vis().some(p=>p.slug===sel)){location.hash="#/projects"}else renderProjects()};
 /* Routing berbasis hash: #/overview, #/projects, #/projects/<slug> */
+const moveInd=()=>{const a=$("#nav [aria-current=page]"),i=$("#nav .ind");if(!a||!i)return;if(!i.dataset.r){i.style.transition="none";i.dataset.r=1}i.style.height=a.offsetHeight+"px";i.style.transform="translateY("+a.offsetTop+"px)";void i.offsetWidth;i.style.transition=""};
 const V=N.map(n=>n[0]),LB=Object.fromEntries(N.map(n=>[n[0],n[1]]));
 function route(){
  const [v0,sl]=(location.hash.replace(/^#\/?/,"")||"overview").split("/");
@@ -275,12 +316,15 @@ function route(){
  if(sel&&!vis().some(p=>p.slug===sel))F="all";
  $$(".view").forEach(e=>{e.hidden=e.id!=="v-"+v});
  $$("[data-v]").forEach(a=>a.dataset.v===v?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current"));
+ moveInd();
  document.title=LB[v]+" — Nabil Alfahmi Labib";
  if(v==="projects")renderProjects();
  if(!first&&(v!==lastV||innerWidth<=1100)){window.scrollTo(0,0);const t=$("#v-"+v+(v==="projects"&&sel?" .det h2":" h1"));if(t)t.focus({preventScroll:true})}
  first=false;lastV=v;
 }
-addEventListener("hashchange",route);
+const hv=()=>{const v=(location.hash.replace(/^#\/?/,"")||"overview").split("/")[0];return V.includes(v)?v:"overview"};
+document.addEventListener("click",e=>{const a=e.target.closest('a[href^="#/"]');if(!a)return;const r=a.getBoundingClientRect(),d=document.documentElement.style;d.setProperty("--cx",(r.left+r.width/2)+"px");d.setProperty("--cy",(r.top+r.height/2)+"px")});
+addEventListener("hashchange",()=>{if(document.startViewTransition&&!matchMedia("(prefers-reduced-motion: reduce)").matches&&hv()!==lastV)document.startViewTransition(route);else route()});
 /* Preview gambar */
 const lb=$("#lb");let lbL=[],lbI=0;
 const lbShow=()=>{const o=lbL[lbI];$("#lbi").src=o.src;$("#lbi").alt=o.alt;$("#lbt").textContent=o.alt;$("#lbn").textContent="GAMBAR "+(lbI+1)+" / "+lbL.length};
