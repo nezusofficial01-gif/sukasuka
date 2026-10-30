@@ -139,7 +139,7 @@ dialog::backdrop{background:rgba(15,46,74,.6)}
 <p class="lead">Mahasiswa Industrial Engineering dengan pengalaman langsung di production layout, perancangan equipment, dan workplace improvement. Saya membangun pendekatan yang sistematis terhadap proses manufaktur dan efisiensi operasional.</p>
 <div class="btns"><a class="btn pri" href="#/projects">Explore Projects</a><a class="btn" href="https://drive.google.com/file/d/1cTh8JJxkhX1ZnzGVYJFbxWuGiHbiVlfd/view?usp=drive_link" target="_blank" rel="noopener">View CV</a></div>
 <ul class="chips"><li>Production Layout</li><li>Facility Planning</li><li>Equipment &amp; Workplace Design</li><li>Continuous Improvement</li></ul></div>
-<figure class="photo"><div class="pf"><div class="ph">PLACEHOLDER<br>assets/foto-profil.jpg</div></div><figcaption><strong>Nabil Alfahmi Labib</strong><span>Mechanical &amp; Layout Drafter</span></figcaption></figure></div></section>
+<figure class="photo"><div class="pf"><div class="ph">PLACEHOLDER<br>assets/foto-profil2.jpg</div></div><figcaption><strong>Nabil Alfahmi Labib</strong><span>Mechanical &amp; Layout Drafter</span></figcaption></figure></div></section>
 
 <section class="view" id="v-projects" hidden><div class="pj" id="pj">
 <div class="list"><h1 tabindex="-1">Projects</h1><p class="sub" style="margin-bottom:0">Pilih project untuk melihat detailnya.</p><div class="fl" id="fl" role="group" aria-label="Filter proyek"></div><div class="pls" id="pl"></div></div>
@@ -267,7 +267,7 @@ function tryImg(path,alt,fail){const b=path.replace(/\.\w+$/,""),x=["jpg","png",
 im.onload=()=>{const q=im.parentNode;if(q&&q.classList&&q.classList.contains("imbox")){q.disabled=false;q.classList.add("zoom");q.setAttribute("aria-label","Perbesar: "+alt)}};
 im.onerror=()=>{k++;k<x.length?im.src=b+"."+x[k]:im.replaceWith(fail())};im.src=b+"."+x[0];return im}
 $$(".lgo").forEach(e=>e.append(tryImg(e.dataset.l,e.dataset.a,()=>document.createComment(""))));
-$(".pf").append(tryImg("assets/foto-profil.jpg","Foto Nabil Alfahmi Labib",()=>document.createComment("")));
+$(".pf").append(tryImg("assets/foto-profil2.jpg","Foto Nabil Alfahmi Labib",()=>document.createComment("")));
 /* Navigasi */
 const si=p=>`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">${p}</svg>`;
 const N=[["overview","Overview",'<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>'],["projects","Projects",'<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/>'],["experience","Experience",'<rect x="3" y="7" width="18" height="13" rx="1"/><path d="M9 7V4h6v3"/>'],["skills","Skills",'<path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/>'],["about","About",'<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/>'],["contact","Contact",'<rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 6l9 7 9-7"/>']];
