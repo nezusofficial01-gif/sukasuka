@@ -10,7 +10,7 @@ Dibuat dengan HTML, CSS, dan JavaScript murni (tanpa framework dan tanpa build t
 ├── index.html      # Seluruh website (HTML + CSS + JS)
 ├── README.md
 └── assets/         # Gambar (buat folder ini sendiri)
-    ├── foto-profil.jpg
+    ├── foto-profil2.jpg
     ├── logo-piranti.png, logo-susiair.png        -> logo di Experience (opsional)
     ├── logo-utb.png, logo-smk.png                -> logo di About / Education (opsional)
     ├── 01-layout-1.jpg ... -2 ... -3            -> Project 01 Production Layout
